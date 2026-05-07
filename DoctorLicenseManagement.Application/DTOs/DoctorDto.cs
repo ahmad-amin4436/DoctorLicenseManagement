@@ -12,5 +12,6 @@ public class DoctorDto
     public DateTime LicenseExpiryDate { get; set; }
     public DoctorStatus Status { get; set; }
     public DateTime CreatedDate { get; set; }
+    public string StatusName { get; set; } = string.Empty;
     public int? DaysExpired { get; set; } // For expired doctors
 }

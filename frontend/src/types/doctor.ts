@@ -12,6 +12,7 @@ export interface Doctor {
   licenseNumber: string;
   licenseExpiryDate: string;
   status: DoctorStatus;
+  statusName: string;
   createdDate: string;
   daysExpired?: number;
 }

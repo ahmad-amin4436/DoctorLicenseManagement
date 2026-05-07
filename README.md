@@ -76,7 +76,7 @@ This project follows **Clean Architecture** principles with clear separation of 
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/your-username/DoctorLicenseManagement.git
+git clone https://github.com/ahmad-amin4436/DoctorLicenseManagement.git
 cd DoctorLicenseManagement
 ```
 
@@ -112,9 +112,9 @@ dotnet run
 ```
 
 The API will be available at:
-- **Development**: `https://localhost:5000`
-- **Swagger UI**: `https://localhost:5000` (root)
-- **Health Check**: `https://localhost:5000/health`
+- **Development**: `https://localhost:5039`
+- **Swagger UI**: `https://localhost:5039` (root)
+- **Health Check**: `https://localhost:5039/health`
 
 ### 4. Frontend Setup
 
@@ -135,7 +135,7 @@ The frontend will be available at `http://localhost:3000`
 
 ### Base URL
 ```
-https://localhost:5000/api
+https://localhost:5039/api
 ```
 
 ### Endpoints
@@ -214,7 +214,7 @@ dotnet test --collect:"XPlat Code Coverage"
 
 ### API Testing with Postman
 1. Import the Postman collection (if provided)
-2. Set environment variable: `{{baseUrl}} = https://localhost:5000/api`
+2. Set environment variable: `{{baseUrl}} = https://localhost:5039/api`
 3. Test all endpoints with various scenarios
 
 ### Frontend Testing
@@ -246,7 +246,7 @@ Update `appsettings.json` in the API project:
 Create `.env.local` in frontend folder:
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
+NEXT_PUBLIC_API_URL=http://localhost:5039/api
 ```
 
 ## 📊 Performance Considerations
@@ -347,7 +347,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For questions and support:
+For questions and support: +971 52 508 1961
 - Create an issue in the GitHub repository
 - Check existing documentation
 - Review the troubleshooting section

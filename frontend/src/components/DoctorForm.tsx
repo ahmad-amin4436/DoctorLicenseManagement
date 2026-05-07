@@ -100,15 +100,15 @@ export default function DoctorForm({ doctor, onSave, onCancel }: DoctorFormProps
 
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-      <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+      <div className="relative top-4 sm:top-8 lg:top-20 mx-auto p-4 sm:p-6 border w-full max-w-md sm:w-96 shadow-2xl rounded-2xl bg-white/95 backdrop-blur-md border border-purple-200">
         <div className="mt-3">
           <div className="flex justify-between items-center">
-            <h3 className="text-lg font-medium text-gray-900">
+            <h3 className="text-base sm:text-lg font-medium text-gray-900">
               {doctor ? 'Edit Doctor' : 'Add New Doctor'}
             </h3>
             <button
               onClick={onCancel}
-              className="text-gray-400 hover:text-gray-600"
+              className="text-gray-400 hover:text-gray-600 text-2xl leading-none"
             >
               <span className="sr-only">Close</span>
               ×
@@ -116,7 +116,7 @@ export default function DoctorForm({ doctor, onSave, onCancel }: DoctorFormProps
           </div>
           
           {errors.submit && (
-            <div className="mt-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+            <div className="mt-4 bg-red-50 border border-red-200 text-red-700 px-3 sm:px-4 py-3 rounded text-sm">
               {errors.submit}
             </div>
           )}
@@ -132,7 +132,7 @@ export default function DoctorForm({ doctor, onSave, onCancel }: DoctorFormProps
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 text-sm sm:text-base"
                 disabled={loading}
               />
               {errors.fullName && (
@@ -150,7 +150,7 @@ export default function DoctorForm({ doctor, onSave, onCancel }: DoctorFormProps
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 text-sm sm:text-base"
                 disabled={loading}
               />
               {errors.email && (
@@ -168,7 +168,7 @@ export default function DoctorForm({ doctor, onSave, onCancel }: DoctorFormProps
                 name="specialization"
                 value={formData.specialization}
                 onChange={handleChange}
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 text-sm sm:text-base"
                 disabled={loading}
               />
               {errors.specialization && (
@@ -186,7 +186,7 @@ export default function DoctorForm({ doctor, onSave, onCancel }: DoctorFormProps
                 name="licenseNumber"
                 value={formData.licenseNumber}
                 onChange={handleChange}
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 text-sm sm:text-base"
                 disabled={loading}
               />
               {errors.licenseNumber && (
@@ -204,7 +204,7 @@ export default function DoctorForm({ doctor, onSave, onCancel }: DoctorFormProps
                 name="licenseExpiryDate"
                 value={formData.licenseExpiryDate}
                 onChange={handleChange}
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 text-sm sm:text-base"
                 disabled={loading}
               />
               {errors.licenseExpiryDate && (
@@ -212,21 +212,21 @@ export default function DoctorForm({ doctor, onSave, onCancel }: DoctorFormProps
               )}
             </div>
 
-            <div className="flex justify-end space-x-3 mt-6">
+            <div className="flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-3 mt-6">
               <button
                 type="button"
                 onClick={onCancel}
-                className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                className="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 text-sm sm:text-base"
                 disabled={loading}
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+                className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 border border-transparent rounded-lg shadow-md text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 font-semibold text-sm sm:text-base"
                 disabled={loading}
               >
-                {loading ? 'Saving...' : (doctor ? 'Update' : 'Create')}
+                {loading ? 'Saving...' : (doctor ? 'Update Doctor' : 'Create New Doctor')}
               </button>
             </div>
           </form>
