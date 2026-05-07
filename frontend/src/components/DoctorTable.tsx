@@ -13,16 +13,60 @@ interface DoctorTableProps {
   onPageChange: (page: number) => void;
 }
 
-const getStatusBadgeClass = (status: DoctorStatus) => {
+const getStatusBadgeClass = (status: DoctorStatus | string | number) => {
+  // Debug logging
+  console.log('getStatusBadgeClass called with:', status, typeof status);
+  
+  // Handle number status values
+  if (typeof status === 'number') {
+    switch (status) {
+      case 0:
+        console.log('Returning Active number badge');
+        return 'bg-gradient-to-r from-green-100 to-emerald-100 text-emerald-800 border border-emerald-300 shadow-sm';
+      case 1:
+        console.log('Returning Expired number badge');
+        return 'bg-gradient-to-r from-red-100 to-rose-100 text-rose-800 border border-rose-300 shadow-sm';
+      case 2:
+        console.log('Returning Suspended number badge');
+        return 'bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 border border-amber-300 shadow-sm';
+      default:
+        console.log('Returning default badge for unknown number:', status);
+        return 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 border border-gray-300 shadow-sm';
+    }
+  }
+  
+  // Handle string status values
+  if (typeof status === 'string') {
+    switch (status) {
+      case 'Active':
+        console.log('Returning Active badge');
+        return 'bg-gradient-to-r from-green-100 to-emerald-100 text-emerald-800 border border-emerald-300 shadow-sm';
+      case 'Expired':
+        console.log('Returning Expired badge');
+        return 'bg-gradient-to-r from-red-100 to-rose-100 text-rose-800 border border-rose-300 shadow-sm';
+      case 'Suspended':
+        console.log('Returning Suspended badge');
+        return 'bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 border border-amber-300 shadow-sm';
+      default:
+        console.log('Returning default badge for unknown string:', status);
+        return 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 border border-gray-300 shadow-sm';
+    }
+  }
+  
+  // Handle DoctorStatus enum values
   switch (status) {
     case DoctorStatus.Active:
+      console.log('Returning Active enum badge');
       return 'bg-gradient-to-r from-green-100 to-emerald-100 text-emerald-800 border border-emerald-300 shadow-sm';
     case DoctorStatus.Expired:
+      console.log('Returning Expired enum badge');
       return 'bg-gradient-to-r from-red-100 to-rose-100 text-rose-800 border border-rose-300 shadow-sm';
     case DoctorStatus.Suspended:
+      console.log('Returning Suspended enum badge');
       return 'bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 border border-amber-300 shadow-sm';
     default:
-      return 'bg-gradient-to-r from-gray-100 to-slate-100 text-slate-800 border border-slate-300 shadow-sm';
+      console.log('Returning default badge for unknown enum:', status);
+      return 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 border border-gray-300 shadow-sm';
   }
 };
 
